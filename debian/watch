@@ -1,0 +1,2 @@
+version=3
+https://github.com/codehaus/qdox/tags .*/qdox-([\d\.]+).tar.gz

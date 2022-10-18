@@ -1,0 +1,60 @@
+Source: qdox
+Section: java
+Priority: optional
+Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Ludovic Claude <ludovic.claude@laposte.net>,
+ Damien Raude-Morvan <drazzib@debian.org>
+Build-Depends:
+ byacc-j,
+ debhelper (>= 10),
+ default-jdk,
+ default-jdk-doc,
+ jflex (>= 1.6.1),
+ junit (>= 3.8.1),
+ libjmock-java (>= 1.0.1),
+ libmaven-antrun-plugin-java,
+ libmaven-javadoc-plugin-java,
+ maven-debian-helper (>= 2.2)
+Standards-Version: 4.0.0
+Vcs-Git: https://anonscm.debian.org/git/pkg-java/qdox.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-java/qdox.git
+Homepage: https://github.com/codehaus/qdox
+
+Package: libqdox-java
+Architecture: all
+Depends: ${maven:Depends}, ${misc:Depends}
+Suggests: libqdox-java-doc, ${maven:OptionalDepends}
+Description: Quickly parses declarations and Javadoc from Java source
+ qdox quickly parses Java source files looking for key items of
+ interest:
+  * class and interface definitions
+  * member declarations
+  * import statements
+  * JavaDoc comments
+ .
+ qdox ignores all other components of Java source, such as actual method
+ implementations, to avoid overhead.  qdox returns a simple document
+ model containing only the declarations and containing enough
+ information to be useful.
+
+Package: libqdox-java-doc
+Section: doc
+Architecture: all
+Depends: ${maven:DocDepends}, ${misc:Depends}
+Suggests: ${maven:DocOptionalDepends}
+Description: Documentation for qdox (javadoc)
+ This package contains the documentation for qdox, generated from
+ Javadoc.
+ .
+ qdox quickly parses Java source files looking for key items of
+ interest:
+  * class and interface definitions
+  * member declarations
+  * import statements
+  * JavaDoc comments
+ .
+ qdox ignores all other components of Java source, such as actual method
+ implementations, to avoid overhead.  qdox returns a simple document
+ model containing only the declarations and containing enough
+ information to be useful.

@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	# Compile the grammar since maven-jflex-plugin is missing
+	#mkdir -p target/generated-sources/parser/com/thoughtworks/qdox/parser/impl
+	java -cp /usr/share/java/jflex.jar jflex.Main -d target/generated-sources/parser/com/thoughtworks/qdox/parser/impl --skel src/grammar/skeleton.inner src/grammar/lexer.flex
+
+	dh_auto_build
+
+get-orig-source:
+	uscan --download-current-version --force-download --rename

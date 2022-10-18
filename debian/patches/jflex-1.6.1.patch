@@ -1,0 +1,42 @@
+From: Markus Koschany <apo@debian.org>
+Date: Wed, 27 Jul 2016 18:01:12 +0200
+Subject: jflex 1.6.1
+
+Fix FTBFS with jflex 1.6.1.
+
+Origin: https://github.com/jflex-de/jflex/commit/f312d563777d907bbb12d1e2ac79835ba83ca53c
+Forwarded: no
+---
+ src/grammar/skeleton.inner | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/src/grammar/skeleton.inner b/src/grammar/skeleton.inner
+index 42cc796..7739c66 100644
+--- a/src/grammar/skeleton.inner
++++ b/src/grammar/skeleton.inner
+@@ -407,18 +407,18 @@
+       zzMarkedPos = zzMarkedPosL;
+ --- char count update
+ 
+---- actions
+-        default: 
+-          if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
+-            zzAtEOF = true;
++        if (zzInput == YYEOF && zzStartRead == zzCurrentPos) {
++          zzAtEOF = true;
+ --- eofvalue
+-          } 
+-          else {
++        }
++        else {
++--- actions
++        default:
+ --- no match
+           }
++        }
+       }
+     }
+-  }
+ 
+ --- main
+ 

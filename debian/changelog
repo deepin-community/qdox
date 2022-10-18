@@ -1,0 +1,148 @@
+qdox (1.12.1-3) unstable; urgency=medium
+
+  * Team upload.
+  * Build with maven-debian-helper instead of maven-ant-helper
+  * Standards-Version updated to 4.0.0
+  * Switch to debhelper level 10
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 02 Aug 2017 11:03:53 +0200
+
+qdox (1.12.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Declare compliance with Debian Policy 3.9.8.
+  * Vcs-fields: Use https.
+  * Tighten build-dependency on jflex.
+  * Fix build.xml and use new jflex.Main classname.
+  * Fix FTBFS with jflex 1.6.1. Add jflex-1.6.1.patch.
+
+ -- Markus Koschany <apo@debian.org>  Wed, 27 Jul 2016 18:03:00 +0200
+
+qdox (1.12.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * debian/control:
+    - Removed Michael Koch from the uploaders (Closes: #654129)
+    - Standards-Version updated to 3.9.6 (no changes)
+    - Updated the Homepage field
+  * Moved the package to Git
+  * Switch to debhelper level 9
+  * debian/copyright:
+    - Updated to the Copyright Format 1.0
+    - Exclude the yacc executables from the upstream tarball
+  * debian/watch: Track the release tags on GitHub
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 09 Sep 2015 15:56:05 +0200
+
+qdox (1.12-1) unstable; urgency=low
+
+  [ Ludovic Claude ]
+  * New upstream release
+  * d/control:
+     - Update version constraints for maven-repo-helper and maven-ant-helper
+     - Remove dependency on cdbs
+  * d/rules:
+     - use dh 7 instead of cdbs
+  * Use 3.0 (quilt) source format
+  * Add --has-package-version to the POM file, add new parameters for
+    mh_install
+  * orig-tarball: no need anymore to remove the qdox directory
+
+  [ Damien Raude-Morvan ]
+  * Upload to unstable.
+  * Bump up Standards-Version to 3.9.2 (no changes).
+  * d/dirs: Remove unneeded file.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Tue, 03 May 2011 23:43:30 +0200
+
+qdox (1.11-1) unstable; urgency=low
+
+  [ Ludovic Claude ]
+  * New upstream release
+  * debian/control: update jflex to 1.4.3
+  * debian/build.xml: add missing option to JFlex
+  * use default-jdk-doc instead of classpath-doc/openjdk-6-doc,
+    add Recommends default-jdk-doc on libqdox-java-doc (Closes: #567291)
+
+  [ Michael Koch ]
+  * New upstream release.
+  * Build-Depends on debhelper (>= 7).
+  * Removed Trygve from Uploaders.
+
+  [ Damien Raude-Morvan ]
+  * Remove Arnaud from Uploaders
+  * Add Homepage and Vcs-* fields to debian/control
+  * Bump Standards-Version to 3.8.4 (no changes needed)
+
+  [ Torsten Werner ]
+  * Remove the duplicated source code in directory qdox from the orig
+    tarball.
+
+ -- Torsten Werner <twerner@debian.org>  Sat, 03 Apr 2010 19:56:02 +0200
+
+qdox (1.9.2-1) unstable; urgency=low
+
+  * New upstream version
+  * Bump up Standards-Version to 3.8.3
+  * Add Build-Depends on openjdk-6-doc (Closes: #543112)
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Wed, 02 Sep 2009 22:22:10 +0100
+
+qdox (1.9.1-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Torsten Werner <twerner@debian.org>  Sun, 09 Aug 2009 23:49:47 +0200
+
+qdox (1.9.1-1) experimental; urgency=low
+
+  * New upstream version, add myself to Uploaders
+  * Change section to java, bump up Standards-Version to 3.8.1
+  * Add watch file
+  * Use default-jdk for the build instead of java-gcj
+  * Remove Depends on java runtimes as it is a library and headless environments
+    may not like a full JRE.
+  * Remove lexer patch as it has been applied upstream
+  * Add ${misc:Depends} to Depends to clear Lintian warnings
+  * Add Build-Depends on jflex and byacc-j as those tools are now packaged
+    and can be used to generate fresh parser code
+  * Update the copyright, license is now Apache 2.0
+  * Add the Maven POM to the package
+  * Add a Build-Depends-Indep dependency on maven-repo-helper
+  * Use mh_installpom and mh_installjar to install the POM and the jar to the
+    Maven repository
+
+ -- Ludovic Claude <ludovic.claude@laposte.net>  Wed, 13 May 2009 20:59:05 +0100
+
+qdox (1.6.1-3) unstable; urgency=low
+
+  [Arnaud Vandyck]
+  * debian/control: libqdox-java-doc in section doc
+
+  [Michael Koch]
+  * debian/rules:
+    + delete target dir in clean target. Closes: #442716.
+  * debian/control:
+    + Fixed numerations in long descriptions.
+    + Moved debhelper and cdbs to Build-Depends.
+    + Upgraded debhelper level to 5.
+    + Added java1-runtime to Depends.
+    + Added myself to Uploaders.
+
+ -- Michael Koch <konqueror@gmx.de>  Tue, 18 Sep 2007 21:11:10 +0200
+
+qdox (1.6.1-2) unstable; urgency=low
+
+  * debian/control:
+    + Better description, thanks to Josh Triplett (closes: #423473)
+    + added ant-optional to build-dep-indep (closes: #424472)
+
+ -- Arnaud Vandyck <avdyk@debian.org>  Thu,  7 Jun 2007 15:48:05 +0200
+
+qdox (1.6.1-1) unstable; urgency=low
+
+  Trygve Laugstøl <trygvis@inamo.no>:
+  * Initial Release (closes: #323043).
+
+ -- Arnaud Vandyck <avdyk@debian.org>  Wed, 11 Apr 2007 13:51:08 +0200
